@@ -1,23 +1,28 @@
 package com.example.demo.service;
+
 import com.example.demo.dto.AddressBookDTO;
-import com.example.demo.model.AddressBook;
+import com.example.demo.model.Address;
 
 import java.util.List;
 
-/**
- * Created IAddressBookService interface to achieve abstraction
- */
+//Created interface for all service methods to achieve abstraction
 public interface IAddressBookService {
 
     public String getWelcome();
 
-    public AddressBook postDataToRepo(AddressBookDTO addressBookDTO);
+    public Address saveDataToRepo(AddressBookDTO addressBookDTO);
 
-    public List<AddressBook> getAllData();
+    public Address getRecordById(Integer id);
 
-    public AddressBook getDataById(Integer id);
+    public List<Address> getRecord();
 
-    public AddressBook updateDataById(Integer id, AddressBookDTO addressBookDTO);
+    public Address updateRecordById(Integer id, AddressBookDTO addressBookDTO);
 
-    public String deleteDataById(Integer id);
+    public String deleteRecordById(Integer id);
+
+    public List<Address> SortByCity();
+
+    public List<Address> SortByState();
+
+    public List<Address> SortByZip();
 }
